@@ -1,0 +1,12 @@
+def fsmsim(string,current,edges,accept):
+    if string == "":
+        return current in accept
+    else:
+        letter = string[0]
+        if (current,letter) in edges:
+            destination= edges [(current,letter)]
+            remaining_string=string[1:]
+            return  fsmsim (remaining_string,destination,edges,accept)
+        else:
+            return False
+ 
